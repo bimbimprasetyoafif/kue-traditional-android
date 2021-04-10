@@ -35,10 +35,4 @@
         android:layout_height="254dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/bResep"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:text="Lihat Resep" />
-
 </LinearLayout>
