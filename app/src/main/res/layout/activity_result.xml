@@ -15,20 +15,6 @@
         android:textSize="90px"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/tResult2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="70px"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/tResult3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="56px"
-        android:text="TextView" />
-
     <ImageView
         android:id="@+id/rImage"
         android:layout_width="match_parent"
