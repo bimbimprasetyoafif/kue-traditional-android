@@ -1,6 +1,7 @@
 package com.example.kuetradisional;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -11,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 List<Classifier.Recognition> results;
                 results = classifier.recognizeImage(resImageBitmap, sensorOrientation);
 
-                if (results != null && results.size() >= 3) {
+                if (results != null && results.size() > 0) {
                     Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                     intent.putExtra("IMAGE_RESULT", resImageBitmap);
 
@@ -94,18 +96,6 @@ public class MainActivity extends AppCompatActivity {
                     if (recognition != null) {
                         String resStr = String.format("%s %.2f", recognition.getTitle(), (100 * recognition.getConfidence())) + "%";
                         intent.putExtra("LABEL_RESULT", resStr);
-                    }
-
-                    Classifier.Recognition recognition1 = results.get(1);
-                    if (recognition != null) {
-                        String resStr = String.format("%s %.2f", recognition1.getTitle(), (100 * recognition1.getConfidence())) + "%";
-                        intent.putExtra("LABEL_RESULT2", resStr);
-                    }
-
-                    Classifier.Recognition recognition2 = results.get(2);
-                    if (recognition != null) {
-                        String resStr = String.format("%s %.2f", recognition2.getTitle(), (100 * recognition2.getConfidence())) + "%";
-                        intent.putExtra("LABEL_RESULT3", resStr);
                     }
 
                     startActivity(intent);
