@@ -9,7 +9,7 @@ public class Client {
     public static Retrofit getClient(){
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://kue-traditional-be.herokuapp.com/")
+                    .baseUrl("http://bimoprasetyoafif.engineer/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
