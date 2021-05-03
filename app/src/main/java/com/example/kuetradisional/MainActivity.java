@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     if (recognition != null) {
                         String resStr = String.format("%s %.2f", recognition.getTitle(), (100 * recognition.getConfidence())) + "%";
                         intent.putExtra("LABEL_RESULT", resStr);
+                        intent.putExtra("LABEL_SAJA", recognition.getTitle());
                     }
 
                     startActivity(intent);

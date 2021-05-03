@@ -31,6 +31,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), MainReceipe.class);
+                intent.putExtra("LABEL", getIntent().getStringExtra("LABEL_SAJA"));
                 startActivity(intent);
             }
         });
